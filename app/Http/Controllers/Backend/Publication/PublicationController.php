@@ -3,18 +3,16 @@
 namespace App\Http\Controllers\Backend\Publication;
 
 use App\Http\Controllers\Controller;
+use App\Models\Publication;
 use Illuminate\Http\Request;
 
 class PublicationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
-        //
+        $publications = Publication::all();
+        return view('klp08.index', compact('publications'));
     }
 
     /**
