@@ -54,6 +54,7 @@ Route::group(['middleware' => 'auth', 'namespace' => 'Backend', 'prefix' => 'adm
 
     Route::group(['namespace' => 'Publication'], function () {
         /** K08 - ADM */
+
        Route::resource('publications', 'PublicationController')->only(['index']);
        Route::resource('pub-proceedings', 'PubProceedingController')->except(['index', 'destroy', 'show']);
        Route::resource('pub-journals', 'PubJournalController')->except(['index', 'destroy', 'show']);
