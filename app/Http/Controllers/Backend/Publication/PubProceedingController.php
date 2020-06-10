@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend\Publication;
 
 use App\Http\Controllers\Controller;
+use App\Models\PublicationProceeding;
 use Illuminate\Http\Request;
 
 class PubProceedingController extends Controller
@@ -57,7 +58,11 @@ class PubProceedingController extends Controller
      */
     public function edit($id)
     {
-        //
+        $proceedings = PublicationProceeding::where('id', $id)->get();
+        foreach($proceedings as $proceeding)
+        {
+            return view('klp08.seminar.edit',compact('proceeding'));
+        } 
     }
 
     /**
