@@ -3,16 +3,19 @@
 namespace App\Http\Controllers\Backend\Publication;
 
 use App\Http\Controllers\Controller;
-use App\Models\Publication;
+use App\Models\PublicationProceeding;
 use Illuminate\Http\Request;
 
-class PublicationController extends Controller
+class PubProceedingController extends Controller
 {
-    
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $publications = Publication::all();
-        return view('klp08.index', compact('publications'));
+        //
     }
 
     /**
@@ -55,7 +58,11 @@ class PublicationController extends Controller
      */
     public function edit($id)
     {
-        //
+        $proceedings = PublicationProceeding::where('id', $id)->get();
+        foreach($proceedings as $proceeding)
+        {
+            return view('klp08.seminar.edit',compact('proceeding'));
+        } 
     }
 
     /**

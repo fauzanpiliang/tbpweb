@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PublicationJournal extends Model
 {
+
     protected $table = 'publication_journals';
 
     static $validation_rules = [
@@ -22,4 +23,7 @@ class PublicationJournal extends Model
     {
         return $this->belongsTo(Publication::class, 'publication_id');
     }
+
+    
+
 }
