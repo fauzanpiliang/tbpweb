@@ -11,7 +11,9 @@ class PublicationController extends Controller
     
     public function index()
     {
+        //mengambil data dari model publication
         $publications = Publication::all();
+        //mengirimkan data publikasi ke view index
         return view('klp08.index', compact('publications'));
     }
 
