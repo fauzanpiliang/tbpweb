@@ -6,6 +6,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class PublicationProceeding extends Model
 {
-    // public $timestamps = false;
-    // protected $fillable = ['title', 'lecturer_id', 'type', 'proceeding_name', 'conference_name', 'conference_location', 'conference_date']; //sesuaikan dengan db
+	const validation_rules = [
+        'id' => 'required|numeric',
+        'publication_id' => 'required|numeric',
+        'proceeding_name' => 'required',
+        'conference_name' => 'required',
+        'conference_location' => 'required',
+        'conference_date' => 'required|date'
+    ];
+
+    public $timestamps = false;
+   
+    protected $table = 'publication_proceedings';
+    protected $guarded = [];
+
+    public function publication_id(){
+    	return $this->belongTo(publication::class);
+    }
 }

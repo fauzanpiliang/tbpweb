@@ -3,12 +3,13 @@
 @section('breadcrumb')
     {!! cui()->breadcrumb([
         'Home' => route('home'),
+        'Publikasi Dosen' => route('backend.publications.index'),
         'Tambah' => '#'
     ]) !!}
 @endsection
 
 @section('toolbar')
-    {!! cui()->toolbar_btn(route('backend.pub-proceedings.create'), 'cil-list', 'List') !!}
+    {!! cui()->toolbar_btn(route('backend.publications.index'), 'cil-list', 'List') !!}
 @endsection
 
 @section('content')
@@ -16,10 +17,11 @@
         <div class="col">
             <div class="row">
                 <div class="col-md-8">
-                    <div class="card">
+
 
                         {{ html()->form('POST', route('backend.pub-proceedings.store'))->open() }}
                         @csrf
+                    <div class="card">
 
                         {{-- CARD HEADER--}}
                         <div class="card-header">
