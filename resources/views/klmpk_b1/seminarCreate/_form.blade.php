@@ -1,27 +1,18 @@
-<!-- Title Text Field Input -->
+<!-- Id integer Field Input -->
 <div class="form-group">
-    <label class="form-label" for="title" name="title">Judul Publikasi</label>
-    {{ html()->text('title')->class(["form-control", "is-invalid" => $errors->has('title')])->id('title')->placeholder('Judul Pubilkasi Dosen') }}
-    @error('title')
-    <div class="invalid-feedback">{{ $errors->first('title') }}</div>
+    <label class="form-label" for="id" name="id">ID Proceeding</label>
+    {{ html()->text('id')->class(["form-control", "is-invalid" => $errors->has('id')])->id('id')->placeholder('ID Proceeding') }}
+    @error('id')
+    <div class="invalid-feedback">{{ $errors->first('id') }}</div>
     @enderror
 </div>
 
-<!-- Lecturer_id Text Field Input -->
+<!-- Publication_id integer Field Input -->
 <div class="form-group">
-    <label class="form-label" for="lecturer_id" name="lecturer_id">Nama Dosen</label>
-    {{ html()->text('lecturer_id')->class(["form-control", "is-invalid" => $errors->has('lecturer_id')])->id('lecturer_id')->placeholder('Nama Lengkap Dosen') }}
-    @error('lecturer_id')
-    <div class="invalid-feedback">{{ $errors->first('lecturer_id') }}</div>
-    @enderror
-</div>
-
-<!-- Input (Select) for Type -->
-<div class="form-group">
-    <label class="form-label" for="type" name="type">Tipe Publikasi</label>
-    {{ html()->text('type')->class(["form-control", "is-invalid" => $errors->has('type')])->id('type')->placeholder('Tipe Publikasi Dosen') }}
-    @error('type')
-    <div class="invalid-feedback">{{ $errors->first('type') }}</div>
+    <label class="form-label" for="publication_id" name="publication_id">ID Publikasi</label>
+    {{ html()->select('publication_id')->options($PublicationProceeding)->class(["form-control", "is-invalid" => $errors->has('publication_id')])->id('publication_id')->placeholder('ID Publikasi') }}
+    @error('publication_id')
+    <div class="invalid-feedback">{{ $errors->first('publication_id') }}</div>
     @enderror
 </div>
 
